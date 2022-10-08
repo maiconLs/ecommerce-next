@@ -6,9 +6,7 @@ import Layout from '../components/Layout'
 import { Store } from '../utils/Store'
 import { useRouter } from 'next/router'
 
-import dynamic from 'next/dynamic'
-
-function CartScreen() {
+export default function CartScreen() {
   const router = useRouter()
   const { state, dispatch } = useContext(Store)
   const {
@@ -17,6 +15,7 @@ function CartScreen() {
   const removeItemHandler = (item) => {
     dispatch({ type: 'CART_REMOVE_ITEM', payload: item })
   }
+
   const updateCartHandler = (item, qty) => {
     const quantity = Number(qty)
     dispatch({ type: 'CART_ADD_ITEM', payload: { ...item, quantity } })
@@ -105,5 +104,3 @@ function CartScreen() {
     </Layout>
   )
 }
-
-export default dynamic(() => Promise.resolve(CartScreen), { ssr: false })
