@@ -130,7 +130,7 @@ export default function LoginScreen() {
         </div>
 
         <div className='mb-4 '>
-          <button className='primary-button'>Register</button>
+          <button type="submit" className='primary-button'>Register</button>
         </div>
         <div className='mb-4 '>
           Don&apos;t have an account? &nbsp;
